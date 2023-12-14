@@ -29,21 +29,26 @@ function basic(input) {
  * @param {Object} input - Input file project.json
  * @returns {{type: number, total: number}} return detailed analysis
  */
-function complex(input){
-    let output={}
-    let total=0;
-    for(let i=0;i<input.targets.length;i++){
-        for(let j=0;j<Object.keys(input.targets[i].blocks).length;j++){
-                let opcode=input.targets[i].blocks[Object.keys(input.targets[i].blocks)[j]].opcode;
-                let type=opcode.split("_")[0];
-                if(!output[type]){
-                    output[type]=1;
+function complex(input) {
+    let output = {}
+    let total = 0;
+    for (let i = 0; i < input.targets.length; i++) {
+        for (let j = 0; j < Object.keys(input.targets[i].blocks).length; j++) {
+            let opcode = input.targets[i].blocks[Object.keys(input.targets[i].blocks)[j]].opcode;
+            try {
+                let type = opcode.split("_")[0];
+                if (!output[type]) {
+                    output[type] = 1;
                 } else {
                     output[type]++;
                 }
                 total++;
+            } catch (err) {
+                console.warn("cannot detect" + input.targets[i].blocks[Object.keys(input.targets[i].blocks)[j]] + ", skipped");
+                console.warn('"total" counted this block, type cannot define by core')
+            }
         }
     }
-    output["total"]=total;
+    output["total"] = total;
     return output;
 }
