@@ -12,7 +12,8 @@ function basic(input) {
         variables: 0,
         lists: 0,
         broadcasts: 0,
-        blocks: 0
+        blocks: 0,
+        extensions: 0,
     };
 
     input.targets.forEach(target => {
@@ -21,6 +22,7 @@ function basic(input) {
         stats.broadcasts += target.broadcasts ? Object.keys(target.broadcasts).length : 0;
         stats.blocks += target.blocks ? Object.keys(target.blocks).length : 0;
     });
+    stats.extensions += input.extensions.length;
     return stats;
 }
 
