@@ -5,6 +5,8 @@ document.getElementById('fileInput').addEventListener('change', function (event)
     reader.onload = function (e) {
         const contents = e.target.result;
         const zip = new JSZip();
+        document.getElementById("fileListComplex").innerHTML = "<code>Loading</code>";
+        document.getElementById("fileListBasic").innerHTML = "<code>Loading</code>";
         zip.loadAsync(contents).then(function (zip) {
             const files = Object.values(zip.files);
             //console.log(files);
