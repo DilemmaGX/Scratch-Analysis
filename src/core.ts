@@ -58,3 +58,30 @@ function getStats(input: any): any {
     stats.extensions += input.extensions.length;
     return stats;
 }
+
+/**
+ * 获取输入对象的扩展属性。
+ * @param {any} input - 输入对象。
+ * @returns {any} 返回输入对象的扩展属性，如果不存在则返回空数组。
+ */
+function getExtensions(input: any): any {
+    return input.extensions || [];
+}
+
+/**
+ * 获取输入对象的Meta属性。
+ * @param {any} input - 输入对象。
+ * @returns {any} 返回输入对象的Meta属性，如果不存在则返回空数组。
+ */
+function getMeta(input: any): any {
+    return input.meta || [];
+}
+
+/**
+ * 判断输入对象是否包含 "gandi" 属性，从而判定是否为Gandi独占项目。
+ * @param input 任意类型的输入对象
+ * @returns 如果输入对象包含 "gandi" 属性，则返回 true,否则返回 false
+ */
+function isGandi(input: any): boolean {
+    return input.hasOwnProperty("gandi");
+}

@@ -1,4 +1,12 @@
 "use strict";
+/**
+ * 获取Head信息。
+ *
+ * @param {any} input - 输入参数，包含目标信息。
+ * @returns {any} 返回一个对象，包含以下属性：
+ * - type: 操作码类型，对应每种类型的计数；
+ * - total: 所有块的数量。
+ */
 function getHead(input) {
     let output = {};
     let total = 0;
@@ -24,6 +32,17 @@ function getHead(input) {
     output["total"] = total;
     return output;
 }
+/**
+ * 获取统计信息。
+ *
+ * @param {any} input - 输入参数，包含目标信息。
+ * @returns {any} 返回一个对象，包含以下属性：
+ * - variables: 所有变量的数量。
+ * - lists: 所有列表的数量。
+ * - broadcasts: 所有广播的数量。
+ * - blocks: 所有块的数量。
+ * - extensions: 所有扩展的数量。
+ */
 function getStats(input) {
     let stats = {
         variables: 0,
@@ -40,5 +59,29 @@ function getStats(input) {
     });
     stats.extensions += input.extensions.length;
     return stats;
+}
+/**
+ * 获取输入对象的扩展属性。
+ * @param {any} input - 输入对象。
+ * @returns {any} 返回输入对象的扩展属性，如果不存在则返回空数组。
+ */
+function getExtensions(input) {
+    return input.extensions || [];
+}
+/**
+ * 获取输入对象的Meta属性。
+ * @param {any} input - 输入对象。
+ * @returns {any} 返回输入对象的Meta属性，如果不存在则返回空数组。
+ */
+function getMeta(input) {
+    return input.meta || [];
+}
+/**
+ * 判断输入对象是否包含 "gandi" 属性，从而判定是否为Gandi独占项目。
+ * @param input 任意类型的输入对象
+ * @returns 如果输入对象包含 "gandi" 属性，则返回 true,否则返回 false
+ */
+function isGandi(input) {
+    return input.hasOwnProperty("gandi");
 }
 //# sourceMappingURL=core.js.map
