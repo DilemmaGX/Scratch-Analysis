@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES2016",
+        "module": "CommonJS",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "removeComments": true,
+        "noEmitOnError": true,
+        "sourceMap": true,
+        "strict": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+    }
+}
