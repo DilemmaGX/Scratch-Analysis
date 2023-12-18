@@ -13,10 +13,10 @@ document.getElementById('fileInput').addEventListener('change', function (event)
             // 读取project.json文件的内容
             zip.file('project.json').async('string').then(function (content) {
                 //console.log(content);
-                let comp = complex(JSON.parse(content))
+                let comp = getHead(JSON.parse(content))
                 document.getElementById("fileListComplex").innerHTML = "<code>" + JSON.stringify(comp) + "</code>"
 
-                let basi = basic(JSON.parse(content))
+                let basi = getStats(JSON.parse(content))
                 document.getElementById("fileListBasic").innerHTML = "<code>" + JSON.stringify(basi) + "</code>"
             });
         });
