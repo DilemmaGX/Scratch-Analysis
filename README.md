@@ -1,5 +1,6 @@
-# Scratch Status
- Scratch file status analysis and presenting tool
+# Scratch Analysis
+
+Scratch file status analysis and presenting tool
 
 Code folder:
 
@@ -8,3 +9,5 @@ Code folder:
 `.js` -> `./dist`
 
 `.js.map` -> `./dist`
+
+`.html` -> `./demo`

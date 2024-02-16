@@ -1,34 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scratch Analysis Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="../dist/core.js"></script>
 </head>
 
 <body>
-    <div class="container" style="max-width: 500px;">
-        <h1 class="text-center my-4">A very basic demo</h1>
+    <div class="container" style="max-width: 50%;">
+        <h1>Scratch Analysis Demo</h1>
+        <a href="http://github.com/dilemmagx/scratch-analysis"><img
+                src="https://custom-icon-badges.demolab.com/badge/repo-DilemmaGX_/_Scratch--Analysis-rgb(0,75,255)?style=flat&logo=repo&logoColor=white"
+                alt="repo"></a>
+        <br><br>
         <div class="input-group mb-3">
-            <input type="file" class="form-control" id="fileInput" accept=".sb3">
+            <input type="file" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1" id="fileInput" accept=".sb3">
         </div>
-        <div class="output" id="fileListBasic"></div>
-        <div class="output" id="fileListComplex"></div>
+
+        <div id="output"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="../dist/core.js"></script>
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
