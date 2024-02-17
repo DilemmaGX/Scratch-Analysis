@@ -29,6 +29,7 @@ document.getElementById('fileInput').addEventListener('change', function (event)
                     "lists": getLists(content)
                 };
                 const custom = getCustomBlocks(content);
+                const gandi = isGandi(content);
                 ele.innerHTML = `
                     <h2>Blocks</h2>
                     <code>${JSON.stringify(blockInfo, null, 2)}</code><br><br>
@@ -40,6 +41,8 @@ document.getElementById('fileInput').addEventListener('change', function (event)
                     <code>${JSON.stringify(extensions)}</code><br><br>
                     <h2>Meta</h2>
                     <code>${JSON.stringify(meta)}</code><br><br>
+                    <h2>Is Gandi-IDE?</h2>
+                    <code>${gandi}</code><br><br>
                 `;
                 console.log(extensions);
             });

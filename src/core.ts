@@ -105,3 +105,10 @@ function getCustomBlocks(project: Project): object {
   });
   return result;
 }
+
+function isGandi(project:Project): boolean {
+  if(project.hasOwnProperty("gandi")) {
+    return true;
+  }
+  return false;
+}

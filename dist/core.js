@@ -88,4 +88,10 @@ function getCustomBlocks(project) {
     });
     return result;
 }
+function isGandi(project) {
+    if (project.hasOwnProperty("gandi")) {
+        return true;
+    }
+    return false;
+}
 //# sourceMappingURL=core.js.map
